@@ -9,6 +9,10 @@ import { useDispatch } from "react-redux";
 const CartProduct = ({ produto, removeProductFromCartAction }) => {
   const dispatch = useDispatch();
 
+  const removeProductFromCart = () => {
+    dispatch(removeProductFromCartAction({ id: produto.id }));
+  }
+
   return (
     <Card className="card" key={produto.id}>
       <div className="d-flex flex-row  justify-content-around">
@@ -45,9 +49,7 @@ const CartProduct = ({ produto, removeProductFromCartAction }) => {
         <div className="d-flex">
           <Button.Danger
             className="align-self-center"
-            onClick={() =>
-              dispatch(removeProductFromCartAction({ id: produto.id }))
-            }
+            onClick={removeProductFromCart}
           >
             Remover
           </Button.Danger>

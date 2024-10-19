@@ -1,5 +1,5 @@
-// import { Link, useLocation, useNavigate } from "react-router-dom";
-import React from "react";
+import { Link } from "react-router-dom";
+import React, { useEffect, useState } from "react";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faPlusCircle,
@@ -10,9 +10,10 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { isAuthenticated, tipoUsuario, routes } from "@nabstore/utils";
-import { Link } from "@reach/router";
 
 const Header = ({ user, logout, navigate, pathname }) => {
+  const [cartCounter, setCartCounter] = useState(0);
+
   const handleLogout = () => {
     logout();
     if (pathname === routes.HOME) {
@@ -21,6 +22,10 @@ const Header = ({ user, logout, navigate, pathname }) => {
       navigate(routes.HOME);
     }
   };
+
+  useEffect(() => {
+
+  }, []);
 
   return (
     <nav className="navbar navbar-expand-sm navbar-dark bg-dark">
@@ -51,8 +56,25 @@ const Header = ({ user, logout, navigate, pathname }) => {
               </li>
               <li className="nav-item">
                 <Link className="nav-link" to={routes.CART}>
-                  Carrinho{" "}
-                  <FontAwesomeIcon className="ms-2" icon={faShoppingCart} />
+                  <div style={{ position: 'relative' }}>
+                    Carrinho{" "}
+                    <FontAwesomeIcon className="ms-2" icon={faShoppingCart} />
+                    <span
+                      style={{
+                        position: 'absolute',
+                        top: '-10px',
+                        right: '-10px',
+                        backgroundColor: 'red',
+                        color: 'white',
+                        borderRadius: '50%',
+                        padding: '2px 4px',
+                        fontSize: '10px',
+                        fontWeight: 'bold'
+                      }}
+                    >
+                      {cartCounter}
+                    </span>
+                  </div>
                 </Link>
               </li>
               {!isAuthenticated() ? (

@@ -19,12 +19,13 @@ const BestOffersFragment = ({ addProductToCart, cart }) => {
       return;
     }
 
-    addProductToCart({
+    const product = {
       id: produto.id,
       precoUnit: produto.preco,
       qtd: 1,
       nome: produto.nome,
-    });
+    };
+    addProductToCart(product);
 
     const args = {
       message: "Prontinho =)",

@@ -10,7 +10,7 @@ import store from "../redux/store";
 import {
   Sobre,
 } from "../screens";
-import { Header } from "@nabstore/styleguide";
+import Header from "../components/Header";
 import { monolitoRoutes } from "@nabstore/utils";
 import { logout as logoutAction } from "../redux/slicer/userSlicer";
 import 'antd/dist/antd.css';
