@@ -6,6 +6,7 @@ import { currencyFormatter, isAuthenticated, routes } from "@nabstore/utils";
 import { Anchor, Button, Typography } from "@nabstore/styleguide";
 import { BestOffersFragment } from "@nabstore/mfe-products";
 import CartProduct from "../../components/CartProduct";
+import publishEvent from "../../../../utils/src/events/publish";
 
 const Cart = ({
   addProductToCartAction,
@@ -38,7 +39,12 @@ const Cart = ({
 
   const addProductToCart = (data) => {
     dispatch(addProductToCartAction(data));
+    publishEvent("ADD_PRODUCT_TO_CART", 1);
   };
+
+  const removeProductFromCartAction = (data) => {
+    publishEvent("REMOVE_PRODUCT_FROM_CART", 1);
+  }
 
   return (
     <div className="container pb-5">

@@ -10,9 +10,10 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { isAuthenticated, tipoUsuario, routes } from "@nabstore/utils";
+import subscribeToTopic from "../../../../utils/src/events/subscribe";
 
 const Header = ({ user, logout, navigate, pathname }) => {
-  const [cartCounter, setCartCounter] = useState(0);
+  const [cartCounter, setCartCounter] = useState(0); //alguma coisa aqui
 
   const handleLogout = () => {
     logout();

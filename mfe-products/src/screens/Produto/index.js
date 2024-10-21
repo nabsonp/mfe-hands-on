@@ -3,7 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate, useParams } from "react-router";
 import { notification } from "antd";
 import { Anchor, Button, LoadingIcon, Typography } from "@nabstore/styleguide";
-import { DeliveryEstimateFragment } from "@nabstore/mfe-checkout";
+import { DeliveryEstimateFragment, LastPurchasesFragment } from "@nabstore/mfe-checkout";
 import {
   isAuthenticated,
   tipoUsuario,
@@ -132,6 +132,7 @@ const Produto = ({ addProductToCartAction }) => {
 
   return (
     <div className="row align-items-center">
+      <LastPurchasesFragment></LastPurchasesFragment>
       <EditProdutoModal
         handleClose={() => setIsEditProdutoModalOpen(false)}
         showModal={isEditProdutoModalOpen}
@@ -164,7 +165,7 @@ const Produto = ({ addProductToCartAction }) => {
 
             <hr />
 
-            <div className="d-flex flex-row justify-content-center mt-2 mb-2">
+            <div className="d-flex flex-row justify-<LastPurchasesFragment></LastPurchasesFragment>content-center mt-2 mb-2">
               <div className="p-2 d-flex flex-column me-4">
                 <div className="d-flex justify-content-center">
                   <Price>{currencyFormat(produto.preco)}</Price>
