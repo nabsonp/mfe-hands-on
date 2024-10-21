@@ -15,6 +15,12 @@ import subscribeToTopic from "../../../../utils/src/events/subscribe";
 const Header = ({ user, logout, navigate, pathname }) => {
   const [cartCounter, setCartCounter] = useState(0); //alguma coisa aqui
 
+  const incrementCartCounter = () => {
+    setCartCounter(prev => prev + 1)
+  }
+
+  subscribeToTopic('ADD_PRODUCT_TO_CART', incrementCartCounter)
+
   const handleLogout = () => {
     logout();
     if (pathname === routes.HOME) {
