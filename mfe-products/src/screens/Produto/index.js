@@ -22,6 +22,7 @@ import { routes } from "@nabstore/utils";
 import EditProdutoModal from "../../components/EditProdutoModal";
 import useGetProduct from "../../hooks/useGetProduct";
 import useDeleteProduct from "../../hooks/useDeleteProduct";
+import LastPurchasesFragment from "../../../../mfe-checkout/src/fragments/LastPurchasesFragment";
 
 const Produto = ({ addProductToCartAction }) => {
   const { id } = useParams();
@@ -132,11 +133,15 @@ const Produto = ({ addProductToCartAction }) => {
 
   return (
     <div className="row align-items-center">
+
+      <LastPurchasesFragment />
+
       <EditProdutoModal
         handleClose={() => setIsEditProdutoModalOpen(false)}
         showModal={isEditProdutoModalOpen}
         produto={produto}
       />
+
       <div className="col">
         <div className="float-start">
           <Anchor.GoBack path={routes.HOME} text="Voltar aos produtos" />

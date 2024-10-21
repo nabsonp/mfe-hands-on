@@ -1,0 +1,31 @@
+# HANDS ON - MICRO FRONT END
+
+Juíle Hanada (22251135)
+
+1. Em que arquivo está implementado o framento de últimas compras?
+    mfe-checkout/src/fragments/LastPurchasesFragment
+
+2. Em que arquivo está implementado o fragmento de melhores ofertas?
+    mfe-products/src/fragments/BestOffersFragment
+
+3. Em que arquivo está implementada a página de detalhes de um produto?
+    mfe-products/src/screens/Produto
+
+4. Em que arquivo está implementado a página de lista de produto?
+    mfe-products/src/screens/Produtos
+
+5. Em que linha da página de produtos é feita a composição das últimas compras?
+    mfe-products/src/screens/Produtos/index.js
+    Linha 24 |       <LastPurchasesFragment />
+
+6. Em que arquivo está implementado a página Sobre?
+    root-config/src/screens/Sobre/Sobre.js
+
+7. Em que arquivo está implementado o componente Button do Design System?
+    root-config/src/components/Button/index.js
+
+8. Em que arquivo estão sendo registrados os micro frontends?
+    root-config/src/nabstore-root-config.js
+
+9. Em que arquivo está a implementação da comunicação com eventos?
+    utils/src/events

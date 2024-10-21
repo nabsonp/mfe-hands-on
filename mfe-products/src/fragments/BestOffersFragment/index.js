@@ -4,6 +4,7 @@ import { currencyFormatter, defaultImages } from "@nabstore/utils";
 import { notification } from "antd";
 import Card from "../../components/Card";
 import useGetOffers from "../../hooks/useGetOffers";
+import publishEvent from "../../../../utils/src/events/publish";
 
 const BestOffersFragment = ({ addProductToCart, cart }) => {
   const { data: ofertas, isLoading, error } = useGetOffers();
@@ -26,6 +27,7 @@ const BestOffersFragment = ({ addProductToCart, cart }) => {
       nome: produto.nome,
     };
     addProductToCart(product);
+    publishEvent('ADD_PRODUCT_TO_CART', product.nome)
 
     const args = {
       message: "Prontinho =)",

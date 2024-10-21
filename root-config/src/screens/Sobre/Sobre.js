@@ -20,6 +20,10 @@ const Sobre = () => {
       <Button.Primary width="480px" margin="80px 0" onClick={() => navigate(routes.HOME)}>
         Ver Produtos
       </Button.Primary>
+
+      <Button.Primary width="480px" margin="80px 0" onClick={() => navigate(routes.CART)}>
+        Ver Carrinho
+      </Button.Primary>
     </div>
   );
 };

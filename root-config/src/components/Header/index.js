@@ -10,6 +10,7 @@ import {
   faUserPlus,
 } from "@fortawesome/free-solid-svg-icons";
 import { isAuthenticated, tipoUsuario, routes } from "@nabstore/utils";
+import subscribeToTopic from "../../../../utils/src/events/subscribe";
 
 const Header = ({ user, logout, navigate, pathname }) => {
   const [cartCounter, setCartCounter] = useState(0);
@@ -23,8 +24,12 @@ const Header = ({ user, logout, navigate, pathname }) => {
     }
   };
 
-  useEffect(() => {
+  const incrementCartCounter = () => {
+    setCartCounter(prev => prev + 1)
+  }
 
+  useEffect(() => {
+    subscribeToTopic('ADD_PRODUCT_TO_CART', incrementCartCounter)
   }, []);
 
   return (
