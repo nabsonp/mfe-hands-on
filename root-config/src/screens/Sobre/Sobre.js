@@ -9,7 +9,7 @@ const Sobre = () => {
   return (
     <div>
       <Title>Bem vindo,</Title>
-      <Subtitle>esta é a minha loja e eu que fiz!</Subtitle>
+      <Subtitle>esta é a minha lojinha!</Subtitle>
 
       <Text>
         Aqui você vai encontrar os melhores produtos, com os melhores preços.
